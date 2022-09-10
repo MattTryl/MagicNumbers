@@ -39,7 +39,8 @@ public class ExtensionCheck {
 
     private String correctExt()
     {
-        try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\nekro\\repo\\Main\\src\\fileSignatures.txt")))
+        Path path = Paths.get("src/fileSignatures.txt");
+        try(BufferedReader br = new BufferedReader(new FileReader(path.toString())))
         {
             for(String line; (line = br.readLine()) != null; )
             {
@@ -72,7 +73,8 @@ public class ExtensionCheck {
 
         if(!extension.equals(filename))
         {
-            try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\nekro\\repo\\Main\\src\\fileSignatures.txt")))
+            Path path = Paths.get("src/fileSignatures.txt");
+            try(BufferedReader br = new BufferedReader(new FileReader(path.toString())))
             {
                 for(String line; (line = br.readLine()) != null; )
                 {
